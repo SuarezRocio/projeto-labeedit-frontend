@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import logo from '../../assets/labenuLogo.png'
 import { P3 ,InputCheck ,Img, Div, P, Div1, Input , Form, P1, Button ,Div2, P2 ,Nav} from './SingUp-styled'
-import { useNavigate } from 'react-router-dom'
-import { goToHomePage, goToLoginPage } from '../../routes/coordinator'
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { BASE_URL, TOKEN_NAME } from "../../constants/url";
+import { goToHomePage, goToLoginPage } from "../../routes/coordinator";
+
 
 const SingUp = () => {
  
@@ -93,11 +96,11 @@ if(form.password === form.passwordConfirmation){
           value={form.password}>
           </Input>
          <span>
-          <input type ="checkbok"
+          <Input type ="checkbok"
           value ={setPassword}
           onChange={ () => setShowPassword(!showPasword)}
           >
-          </input>
+          </Input>
           </span> 
         
           <label>Confirmation Senha</label>
@@ -108,12 +111,10 @@ if(form.password === form.passwordConfirmation){
           </Input>  
           <h3
           style = {{color: "brown"}}
-          hidden={{ form.password == form.passwordCofirmation}}
-          >confirmacion de senha nao es correcta</h3>
-
+        >confirmacion de senha nao es correcta</h3>
         </Div1>
-        <P1>Ao continuar, você concorda com o nosso Contrato de usuário e nossa Política de Privacidade</P1>
         <Div2>
+        <P1>Ao continuar, você concorda com o nosso Contrato de usuário e nossa Política de Privacidade</P1>
         <InputCheck type="checkbox"></InputCheck>
         <P2>Eu concordo em receber emails sobre coisas legais no Labeddit</P2>    
         </Div2>

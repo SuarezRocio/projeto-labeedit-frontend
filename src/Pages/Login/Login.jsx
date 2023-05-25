@@ -1,19 +1,26 @@
 import React from 'react'
 import logo from '../../assets/labenuLogo.png'
-import { InputCheck ,Img, Div, P, Div1, Input , Form, P1, Button ,Div2,  P2 } from './SingUp-styled'
+import { InputCheck ,Img, Div, P, Div1, Input , Form, P1, Button ,Div2,  P2 } from './Login-styled'
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { BASE_URL, TOKEN_NAME } from "../../constants/url";
+import { goToHomePage, goToSignupPage } from "../../routes/coordinator";
+
 
 const Login = () => {
   const navigate = useNavigate()
  
 const [ isLoading, setIsLoading] = useState(false)
-
- const [form, setForm] = {
+const [form, setForm] = useState({
   nome : "",
   email : "",
   password :"",
   passwordConfirmation : ""
- }
  
+})
+  
+
 const [showPasword , setShowPassword] = useState(false)
 
 
@@ -52,6 +59,8 @@ if(form.password === form.passwordConfirmation){
 }
   return (
     <Div>
+
+      <h1>hola</h1>
      
       <Img src={logo} />
       <P>O projeto de rede social da Labenu</P>
@@ -87,10 +96,11 @@ if(form.password === form.passwordConfirmation){
         <P2>Eu concordo em receber emails sobre coisas legais no Labeddit</P2>    
         </Div2>
         <Button disabled={setIsLoading} onClick={() => goToHomePage(navigate)}>Entrar</Button>
-        <Button2 disabled={setIsLoading} onClick={() => goToSingUpPage(navigate)}>Crear Conta</Button2> 
+        <Button2 disabled={setIsLoading} onClick={() => goToSignUpPage(navigate)}>Crear Conta</Button2> 
         {/**disabled={isLoading} */}
       </Form>
     </Div>  
   )
 }
-export default SingUp
+}
+export default Login

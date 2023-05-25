@@ -1,18 +1,30 @@
-import React, { useContext, useState } from 'react'
-import logo from '../../assets/labenuLogo.png'
-import { Div4, P3 , Img, Div, Div1, Div1, Button , Nav, Div2, Div3 , Button2} from './SingUp-styled'
+import React, { useContext, useState, useEffect} from 'react'
+//import logo from '../../assets/labenuLogo.png'
+import { Div4, P3 , Img, Div,  Div1, Button , Nav, Div2, Div3 , Button2} from './HomePage-styled'
+import axios from "axios";
+//import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+//import Header from "../../Componentes/Header";
+import PostCard from "../../Componentes/PostCard";
+import CommentCard from "../../Componentes/CommentCard";
+import { BASE_URL, TOKEN_NAME } from "../../constants/url";
+import { GlobalContext } from "../../contexts/GlobalContext";
+import { goToLoginPage } from "../../routes/coordinator";
+
+
 
 const HomePage = () => {
 const navigate = useNavigate()
 
 const context = useContext(GlobalContext)
 const { post, fetchPost} = context;
+console.log(context)
 
 const [isLoading, setIsLoding] = useState(false);
 const [postName, setPostName] = useState("");
 
 
-useEffect = (() => {
+useEffect(() => {
 
 const token = window.localStorage.getItem(TOKEN_NAME)
 
@@ -20,8 +32,7 @@ if(!token){
   goToLoginPage(navigate)
 }else{
   fetchPost()
-}
-}, [])
+}}, [])
 
 const createPost = async (e) => {
   e.preventDefault()
@@ -41,7 +52,7 @@ const createPost = async (e) => {
     name: postName
   }
 
-  await axios.post(BASE_URL + "/" , body, config)
+  await axios.post(BASE_URL + "/post" , body, config)
 
   setPostName()
   setIsLoding()
@@ -52,7 +63,7 @@ const createPost = async (e) => {
   /**console.log(error?.data?.response) */
   }
 }
-
+{/*console.log(post)*/}
   return (
     <Div>
 
@@ -85,15 +96,15 @@ const createPost = async (e) => {
     {post.map((post) => {
       return <PostCard key ={post.id} post={post}/>
     })}    
-    </section>  
+    </section> 
 
     
-    <h3>Comment</h3>  
+   {/* <h3>Comment</h3>  
     <section>
     {comment.map((comment) => {
       return <CommentCard key ={comment.id} post={comment}/>
     })}    
-    </section>
+  </section>*/}
 
     { /* <Div4>
       </Div4>

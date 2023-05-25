@@ -6,7 +6,7 @@ export const goToHomePage = (navigate) => {
     navigate("/login")
     }
     
-    export const goToSingupPage = (navigate) => {
+    export const goToSignupPage = (navigate) => {
     navigate("/singup")
     }
     

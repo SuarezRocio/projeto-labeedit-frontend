@@ -1,5 +1,7 @@
-import HomePage from '../Pages/HomePage/HomePage'
-import { Router, native } from 'react-router-dom';
+import axios from "axios";
+import { useContext, useState } from "react";
+import { BASE_URL, TOKEN_NAME } from "../constants/url";
+import { GlobalContext } from "../contexts/GlobalContext";
 
 export default function CommentCard(props){
 
@@ -42,7 +44,7 @@ export default function CommentCard(props){
   
       <div>
           <h2>{comment.name}</h2>
-          <span onClick={likes} style = {{ cursor : "pointer"}}>
+          <span onClick={likes} style={{cursor:"pointer"}}>
           {" "} ok {comment.likes}
           </span>
   
