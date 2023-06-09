@@ -1,3 +1,3 @@
-export const BASE_URL = "localhost://3003"
+export const BASE_URL = "https://deploy-labeedit-back.onrender.com"
 
-export const TOKEN_NAME = "labeedit-token"
+export const TOKEN_NAME = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlkMjQ2OGRmLWFjYmEtNDI2NS04ODk5LWJmMzc2MTBiMTMzMSIsIm5hbWUiOiJjYXRhbGluYSIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2ODYxNzMzNjEsImV4cCI6MTY4Njc3ODE2MX0.CIDM5aeiY7ZK0eibWJ0k5qXprOiB6RIXzDlBg-fr8SM"
