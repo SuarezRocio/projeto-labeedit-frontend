@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../../assets/labenuLogo.png'
-import { InputCheck ,Img, Div, P, Div1, Input , Form, P1, Button ,Div2,  P2 } from './Login-styled'
+import { InputCheck, Img, Div, P, Div1, Input, Form, P1, Button, Div2, P2 } from './Login-styled'
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -8,99 +8,88 @@ import { BASE_URL, TOKEN_NAME } from "../../constants/url";
 import { goToHomePage, goToSignupPage } from "../../routes/coordinator";
 
 
-const Login = () => {
-  const navigate = useNavigate()
+function Login() {
+
+
+  const [email, setEmail] = useState("")
+  const [password, setPaswword] = useState("")
+
+  //const emailito = "sofia@email.com"
+  //const passwordcita = ""
+
+  /*const bodyexample =
+   {
+     "email": "sofia@email.com",
+     "password": "S45456d478L"
+   }
  
-const [ isLoading, setIsLoading] = useState(false)
-const [form, setForm] = useState({
-  nome : "",
-  email : "",
-  password :"",
-  passwordConfirmation : ""
- 
-})
-  
+   axios
+     .post("https://deploy-labeedit-back.onrender.com/users/login", bodyexample)
+     .then((res) => {
+       console.log(res.data)
+     })
+ */
 
-const [showPasword , setShowPassword] = useState(false)
+  function handleLogin(e) {
+    //const navigate = useNavigate()
 
+    e.preventDefault()
 
-const changeForm = (e) => {
-  setForm({...form ,
-  [e.target.name] : [e.target.value] 
-  }) 
-}
+    console.log("hola mundo")
 
-
-const singup = async (e) => {
-  e.preventDefault()
-
-if(form.password === form.passwordConfirmation){
-  try {
-    setIsLoading(true)
-
-    const body ={
-      name: form.name,
-      email: form.email,
-      password: form.password
+    const bodyexample =
+    {
+      "email": "sofia@email.com",
+      "password": "S45456d478L"
     }
 
-    const response = await axios.post(BASE_URL + "/login" , body)
-    windows.localStorage(TOKEN_NAME, response.data.token)
-/**.setItem */
+    const body = {
+      "email": email,
+      "password": password
+    }
 
-    setIsLoading(false)
-    goToHomePage(navigate)
-  } catch{
-    setIsLoading(false)
-    
-    window.alert(error?.data?.response)
-    /**Error 404 */
+    axios
+      .post("https://deploy-labeedit-back.onrender.com/users/login", body)
+      .then((res) => {
+        console.log(res.data)
+      })
+
+    console.log(password)
+    console.log(email)
+    console.log(body)
+
+
+    axios
+      .post("https://deploy-labeedit-back.onrender.com/users/login", body)
+
+      .then((response) => {
+        console.log(response)
+        localStorage.setItem("token", response.data)
+        navigate("/home")
+      })
+
+      .catch((error) => {
+        console.log(error)
+      })
+
+
   }
-}
-  return (
-    <Div>
+  const navigate = useNavigate()
 
-      <h1>hola</h1>
-     
-      <Img src={logo} />
-      <P>O projeto de rede social da Labenu</P>
-    
-      <Form>
-        <Div1>
-          <Input placeholder='Email'
-           name={"email"}
-           value={"form.email"}
-           onChange={changeForm} 
-          >
-          </Input>
-        </Div1>
-        <Div1>
-          <Input placeholder='Senha' 
-          type={showPasword ? "text" : "password"}
-          name={"password"}
-          value={"form.password"}
-          onChange={changeForm}
-          >
-          </Input>
-     {/* <span>
-         <input type ="checkbok"
-          value ={setPassword}
-          onChange={ () => setShowPassword(!showPasword)}
-          >
-          </input>
-          </span> */}
-        </Div1>
-        <P1>Ao continuar, você concorda com o nosso Contrato de usuário e nossa Política de Privacidade</P1>
-        <Div2>
-        <InputCheck type="checkbox"></InputCheck>
-        <P2>Eu concordo em receber emails sobre coisas legais no Labeddit</P2>    
-        </Div2>
-        <Button disabled={setIsLoading} onClick={() => goToHomePage(navigate)}>Entrar</Button>
-        <Button2 disabled={setIsLoading} onClick={() => goToSignUpPage(navigate)}>Crear Conta</Button2> 
-        {/**disabled={isLoading} */}
-      </Form>
-    </Div>  
+
+
+
+  return (
+    <form onSubmit={(e) => { handleLogin(e) }}>
+
+      <input placeholder="ingrese el email" type="text" onChange={(e) => { setEmail(e.target.value) }} />
+
+      <input placeholder="ingrese la senha" type="text" onChange={(e) => { setPaswword(e.target.value) }} />
+
+
+      <input type="submit" />
+    </form>
   )
-}
+
 }
 export default Login
