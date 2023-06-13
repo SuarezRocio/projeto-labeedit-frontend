@@ -3,8 +3,10 @@ import styled from "styled-components";
 //import styled from '@emotion/styled'
 
 export const Img = styled.img`{
+    display:flex;
     width: 3.1vw;    
-
+    position: relative;
+    left: 42rem;  
 }`
 
 export const Div = styled.div`{
@@ -58,11 +60,17 @@ export const P1 = styled.p`{
 }`
 
 export const P3 = styled.p`{
-    display:flex;
-   justify-content: flex-end;
-   widht: 2vw;
-   heigth:10px;
+    position: absolute;
+    right: 10rem;   
+    top: 0.4rem;
+    widht: 2vw;
+    heigth:10px;
 }`
+
+/**display:flex;
+   justify-content: flex-end;
+    */
+
 /**    display:flex;
     flex-direction:column;
     width:90vw;
@@ -90,7 +98,7 @@ export const Label4 = styled.label`{
     display:flex;
     align-items: cneter;
     justify-content: center;
-    margin: 1rem;
+    margin: 0.7rem;
 }`
 
 

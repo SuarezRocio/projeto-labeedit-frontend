@@ -64,11 +64,12 @@ function SingUp() {
           <Label4>Confirmation Senha</Label4>
           <Input >
           </Input>
+          <Label4>Email</Label4>
+          <input placeholder="ingrese el email" type="text" onChange={(e) => { setEmail(e.target.value) }} />
+          <Label4>Senha</Label4>
+          <input placeholder="ingrese la senha" type="text" onChange={(e) => { setPaswword(e.target.value) }} />
+
         </Div1>
-        <Label4>Email</Label4>
-        <input placeholder="ingrese el email" type="text" onChange={(e) => { setEmail(e.target.value) }} />
-        <Label4>Senha</Label4>
-        <input placeholder="ingrese la senha" type="text" onChange={(e) => { setPaswword(e.target.value) }} />
 
         <Div3>
           <P1>Ao continuar, você concorda com o nosso Contrato de usuário e nossa Política de Privacidade</P1>
