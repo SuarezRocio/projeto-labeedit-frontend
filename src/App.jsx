@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import SingUp from './Pages/SingUp/SingUp'
 import HomePage from './Pages/HomePage/HomePage'
 import Login from "./Pages/Login/Login"
+//import styled from 'styled-components';
 //import { useState, useEffect } from 'react'
 //import { GlobalContext } from './contexts/GlobalContext'
 //import Router from './routes/Router.jsx'
@@ -18,7 +19,6 @@ function App() {
 
   return (
     <>
-      <h1>hola</h1>
       <BrowserRouter>
         <Routes >
           <Route path="/login" element={<Login />} />

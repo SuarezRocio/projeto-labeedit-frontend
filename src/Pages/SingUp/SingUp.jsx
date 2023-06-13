@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { Label4, Div3, Div, InputCheck, P, Div1, Input, Form, P1, Button, P2, Img, P3, Nav } from './SingUp-styled'
+import logo from '../../assets/labenuLogo.png'
 
 function SingUp() {
 
@@ -46,17 +47,44 @@ function SingUp() {
 
 
   return (
-    <form onSubmit={(e) => { handleSubmit(e) }}>
+    <Div>
 
-      <input placeholder="ingrese el nombre" type="text" onChange={(e) => { setName(e.target.value) }} />
+      <Nav>
+        <Img src={logo} />
+        <P3>Entrar</P3>
+      </Nav>
+      <P>Olá, boas vindas ao LabEddit </P>
 
-      <input placeholder="ingrese el email" type="text" onChange={(e) => { setEmail(e.target.value) }} />
+      <Form onSubmit={(e) => { handleSubmit(e) }}>
 
-      <input placeholder="ingrese la senha" type="text" onChange={(e) => { setPaswword(e.target.value) }} />
+        <Div1>
+          <Label4>Senha</Label4>
+          <Input placeholder="ingrese el nombre" type="text" onChange={(e) => { setName(e.target.value) }} />
+
+          <Label4>Confirmation Senha</Label4>
+          <Input >
+          </Input>
+        </Div1>
+        <Label4>Email</Label4>
+        <input placeholder="ingrese el email" type="text" onChange={(e) => { setEmail(e.target.value) }} />
+        <Label4>Senha</Label4>
+        <input placeholder="ingrese la senha" type="text" onChange={(e) => { setPaswword(e.target.value) }} />
+
+        <Div3>
+          <P1>Ao continuar, você concorda com o nosso Contrato de usuário e nossa Política de Privacidade</P1>
+          <InputCheck type='checkbox'></InputCheck>
+        </Div3>
+
+        <Div3>
+          <P2>Eu concordo em receber emails sobre coisas legais no Labeddit</P2>
+          <InputCheck type='checkbox'></InputCheck>
+        </Div3>
+
+        <Button type="submit" >Cadastrar</Button>
+      </Form>
 
 
-      <input type="submit" />
-    </form>
+    </Div>
   )
 
 }

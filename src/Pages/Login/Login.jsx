@@ -1,11 +1,12 @@
 import React from 'react'
 import logo from '../../assets/labenuLogo.png'
-import { InputCheck, Img, Div, P, Div1, Input, Form, P1, Button, Div2, P2 } from './Login-styled'
+//import { InputCheck, Img, Div, P, Div1, Input, Form, P1, Button, Div2, P2 } from './Login-styled'
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { BASE_URL, TOKEN_NAME } from "../../constants/url";
-import { goToHomePage, goToSignupPage } from "../../routes/coordinator";
+//import { BASE_URL, TOKEN_NAME } from "../../constants/url";
+//import { goToHomePage, goToSignupPage } from "../../routes/coordinator";
+import { Img, Div, P, Div1, Form, P1, Button, Div2, P2, Button2, Label } from './Login-styled'
 
 
 function Login() {
@@ -80,15 +81,30 @@ function Login() {
 
 
   return (
-    <form onSubmit={(e) => { handleLogin(e) }}>
-
-      <input placeholder="ingrese el email" type="text" onChange={(e) => { setEmail(e.target.value) }} />
-
-      <input placeholder="ingrese la senha" type="text" onChange={(e) => { setPaswword(e.target.value) }} />
+    <Div>
+      <Img src={logo} />
+      <P>O projeto de rede social da Labenu</P>
 
 
-      <input type="submit" />
-    </form>
+      <Form onSubmit={(e) => { handleLogin(e) }}>
+        <Div1>
+          <Label>Email</Label>
+          <input placeholder="ingrese el email" type="text" onChange={(e) => { setEmail(e.target.value) }} />
+        </Div1>
+        <Div1>
+          <Label>Senha</Label>
+          <input placeholder="ingrese la senha" type="text" onChange={(e) => { setPaswword(e.target.value) }} />
+        </Div1>
+        <P1>Ao continuar, você concorda com o nosso Contrato de usuário e nossa Política de Privacidade</P1>
+        <Div2>
+          <input type='checkbox'></input>
+          <P2>Eu concordo em receber emails sobre coisas legais no Labeddit</P2>
+        </Div2>
+
+        <Button type="submit">Entrar</Button>
+        <Button2>Crear Conta</Button2>
+      </Form>
+    </Div>
   )
 
 }
