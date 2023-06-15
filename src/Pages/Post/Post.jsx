@@ -97,7 +97,7 @@ function Post() {
             <Div>
                 <Div2>
                     <Img src={logo} />
-                    <Button2>Deslogar</Button2>
+                    <Button2 onClick={() => { navigate("/") }}>Deslogar</Button2>
                 </Div2>
                 <div>
                     <Section1>

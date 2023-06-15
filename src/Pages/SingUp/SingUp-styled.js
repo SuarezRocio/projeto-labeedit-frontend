@@ -59,10 +59,10 @@ export const P1 = styled.p`{
     gap: 1rem;
 }`
 
-export const P3 = styled.p`{
+export const ButtonEntrar = styled.button`{
     position: absolute;
     right: 10rem;   
-    top: 0.4rem;
+    top: 0.9rem;
     widht: 2vw;
     heigth:10px;
 }`

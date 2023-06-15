@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Label4, Div3, Div, InputCheck, P, Div1, Input, Form, P1, Button, P2, Img, P3, Nav } from './SingUp-styled'
+import { Label4, Div3, Div, InputCheck, P, Div1, Input, Form, P1, Button, P2, Img, ButtonEntrar, Nav } from './SingUp-styled'
 import logo from '../../assets/labenuLogo.png'
 
 function SingUp() {
@@ -51,7 +51,7 @@ function SingUp() {
 
       <Nav>
         <Img src={logo} />
-        <P3>Entrar</P3>
+        <ButtonEntrar onClick={() => { navigate("/") }}>Entrar</ButtonEntrar>
       </Nav>
       <P>Olá, boas vindas ao LabEddit </P>
 
