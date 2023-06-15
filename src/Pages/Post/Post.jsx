@@ -14,7 +14,7 @@ import axios from "axios";
 //import { goToLoginPage } from "../../routes/coordinator";
 //import { H3, Label4, Button, Div, Button2, Img, Div2, Section } from './HomePage-styled'
 
-import { H3, Label4, Button, Div, Button2, Img, Div2, Section, H2, Section1, Div4 } from './Post-styled'
+import { H3, Label4, Button, Div, Button2, Img, Div2, Section, H2, Section1, Div4, Input } from './Post-styled'
 //import logo from '../../assets/labenuLogo.png'
 //import { useNavigate } from 'react-router-dom';
 
@@ -115,7 +115,7 @@ function Post() {
                         <Section>
                             <H3>Crear comentario</H3>
                             <Label4 htmlFor='tituloComentario'>Título del comentario:</Label4>
-                            <input placeholder='digite um título para o seu comentario'
+                            <Input placeholder='digite um título para o seu comentario'
                                 name="title"
                                 onChange={(e) => { setTitulo(e) }}
                             />
@@ -126,7 +126,7 @@ function Post() {
                             />
                         </Section>
 
-                        <Button type='submit' >Comment</Button>
+                        <Button type='submit'>Comment</Button>
 
                     </form>
                 </section>
