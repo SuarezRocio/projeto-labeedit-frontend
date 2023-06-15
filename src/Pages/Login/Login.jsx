@@ -15,6 +15,7 @@ function Login() {
   const [email, setEmail] = useState("")
   const [password, setPaswword] = useState("")
 
+
   //const emailito = "sofia@email.com"
   //const passwordcita = ""
 
@@ -93,7 +94,7 @@ function Login() {
         </Div1>
         <Div1>
           <Label>Senha</Label>
-          <input placeholder="ingrese la senha" type="text" onChange={(e) => { setPaswword(e.target.value) }} />
+          <input placeholder="ingrese la senha" type="password" onChange={(e) => { setPaswword(e.target.value) }} />
         </Div1>
         <P1>Ao continuar, você concorda com o nosso Contrato de usuário e nossa Política de Privacidade</P1>
         <Div2>
@@ -102,7 +103,7 @@ function Login() {
         </Div2>
 
         <Button type="submit">Entrar</Button>
-        <Button2>Crear Conta</Button2>
+        <Button2 onClick={() => { navigate("/") }}>Crear Conta</Button2 >
       </Form>
     </Div>
   )

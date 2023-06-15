@@ -15,6 +15,7 @@ import axios from "axios";
 import { H3, Label4, Button, Div, Button2, Img, Div2, Section } from './HomePage-styled'
 
 import logo from '../../assets/labenuLogo.png'
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -28,7 +29,7 @@ function HomePage() {
   const [post, setPost] = useState([])
   const [content, setContent] = useState("")
   const [titulo, setTitulo] = useState("")
-
+  const [text, setText] = useState("")
 
 
 
@@ -50,7 +51,7 @@ function HomePage() {
 
 
 
-  function createPost(e) {
+  async function createPost(e) {
     e.preventDefault()
 
     /* const Headers = {
@@ -64,25 +65,114 @@ function HomePage() {
      }
  */
 
-    axios
-      .post("https://deploy-labeedit-back.onrender.com/post", {
-        "content": content
-      }, {
-        "headers": {
-          "Authorization": localStorage.getItem("token")
+    //const [text, setText] = useState('')
+
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem('token'),
+      },
+      body: JSON.stringify({
+        content: text,
+      }),
+    };
+    fetch('https://deploy-labeedit-back.onrender.com/post', requestOptions)
+      .then((res) => {
+        navigate('/post/1')
+      })
+
+
+
+
+
+    /*
+        const requestOptions = {
+          method: 'POST',
+          headers: {
+            Authorization: localStorage.getItem("token")
+          },
+          body: JSON.stringify({
+            content: text
+          })
         }
-      })
+        fetch(
+          'https://deploy-labeedit-back.onrender.com/post',
+          requestOptions
+        )
+          .then(res => res.json())
+          .then((response) => {
+            console.log(response)
+            localStorage.setItem("token", response.data)
+            navigate("/post/1")
+          })
+    */
 
-      .then((response) => {
-        console.log(response)
-        localStorage.setItem("token", response.data)
-        navigate("/home")
-      })
 
-      .catch((error) => {
-        console.log(error)
-      })
+    /*
+        const bodyContent = { content: text }
+    
+        const serializadoBodyContent = { ...bodyContent }
+    
+        delete serializadoBodyContent.circularReference
+        await fetch(
+          'https://deploy-labeedit-back.onrender.com/post',
+          {
+            method: 'POST',
+            headers: {
+              Authorization: localStorage.getItem("token"),
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(serializadoBodyContent)
+          }
+        )
+          .then(res => res.json())
+          .then((response) => {
+            console.log(response)
+            localStorage.setItem("token", response.data)
+            navigate("/post/1")
+          })
+    
+    */
+    /* fetch(
+       'https://deploy-labeedit-back.onrender.com/post',
+       {
+         method: 'POST',
+         headers: {
+           Authorization: localStorage.getItem("token")
+         },
+         body: JSON.stringify({ content: text })
+       }
+     )
+       .then(res => res.json())
+       .then((response) => {
+         console.log(response)
+         localStorage.setItem("token", response.data)
+         navigate("/post/1")
+       })
+ */
+    /* axios
+      .post("https://deploy-labeedit-back.onrender.com/post", {
+         "content": content
+       }, {
+         "headers": {
+           "Authorization": localStorage.getItem("token")
+         }
+       })
+ 
+       .then((response) => {
+         console.log(response)
+         localStorage.setItem("token", response.data)
+         navigate("/post/1")
+       })
+ 
+       .catch((error) => {
+         console.log(error)
+       })*/
   }
+
+  const navigate = useNavigate()
 
 
 
@@ -90,7 +180,7 @@ function HomePage() {
     <Div>
       <Div2>
         <Img src={logo} />
-        <Button2>Deslogar</Button2>
+        <Button2 onClick={() => { navigate("/") }}>Deslogar</Button2>
       </Div2>
 
       <section>
@@ -100,12 +190,11 @@ function HomePage() {
             <Label4 htmlFor='tituloPost'>Título:</Label4>
             <input placeholder='digite um título para o seu post'
               name="title"
-              onChange={(e) => { setTitulo(e) }}
+              onChange={(e) => { setTitulo(e.target.value) }}
             />
             <Label4 htmlFor='textoPost'>Texto:</Label4>
-            <textarea placeholder='crie um post!'
-              name="body"
-              onChange={(e) => { setContent(e) }}
+            <textarea placeholder='crie um post!' name="body"
+              onChange={(e) => { setText(e.target.value) }}
             />
           </Section>
 

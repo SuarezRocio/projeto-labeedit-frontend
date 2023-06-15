@@ -58,16 +58,16 @@ function SingUp() {
       <Form onSubmit={(e) => { handleSubmit(e) }}>
 
         <Div1>
-          <Label4>Senha</Label4>
+          <Label4>Nome</Label4>
           <Input placeholder="ingrese el nombre" type="text" onChange={(e) => { setName(e.target.value) }} />
 
-          <Label4>Confirmation Senha</Label4>
-          <Input >
-          </Input>
           <Label4>Email</Label4>
           <input placeholder="ingrese el email" type="text" onChange={(e) => { setEmail(e.target.value) }} />
           <Label4>Senha</Label4>
-          <input placeholder="ingrese la senha" type="text" onChange={(e) => { setPaswword(e.target.value) }} />
+          <input placeholder="ingrese la senha" type="password" onChange={(e) => { setPaswword(e.target.value) }} />
+
+          <Label4>Confirmation Senha</Label4>
+          <Input placeholder="ingrese la senha" type="password" onChange={(e) => { setPaswword(e.target.value) }} />
 
         </Div1>
 
