@@ -12,6 +12,33 @@ export const Section = styled.section`{
 
 
 
+export const Section1 = styled.section`{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid rgba(234, 41, 41, 0.624);
+    margin: 1rem;
+    background-color: rgba(255, 203, 126, 0.378);
+}`
+
+//flex-direction: column;
+
+
+export const H2 = styled.h2`{
+    display: flex;
+    justify-content:center;
+    font-size: 16px;    
+    font-weigth:300px;
+}`
+
+export const Div4 = styled.div`{
+    display: flex;
+    justify-content:center;
+    border: 1px solid rgba(234, 41, 41, 0.539);   
+    background-color: rgba(255, 210, 133, 0.465);
+    margin: 0.5rem;
+}`
+
+
 
 export const H3 = styled.h3`{
     display: flex;
@@ -37,26 +64,7 @@ export const Nav = styled.div`{
     bottom: 91.3%;
 }`
 
-/*
-export const Button2 = styled.button`{
-    color: black;    
-    position: absolute;
-    width: 25.6px;
-    height: 24px;
-    left: 34px;
-    top: 57px;
-    }`
 
-
-export const Img = styled.img`{
-        width: 3.1vw;    
-        position: absolute;
-        width: 28.02px;
-        height: 31.67px;
-        left: 199.99px;
-        top: 53px;
-    }`
-*/
 export const P3 = styled.p`{
         color: #4088CB;
         font-family: 'Noto Sans';

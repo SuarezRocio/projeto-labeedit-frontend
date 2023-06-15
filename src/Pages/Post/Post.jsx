@@ -14,10 +14,11 @@ import axios from "axios";
 //import { goToLoginPage } from "../../routes/coordinator";
 //import { H3, Label4, Button, Div, Button2, Img, Div2, Section } from './HomePage-styled'
 
-import { H3, Label4, Button, Div, Button2, Img, Div2, Section } from './Post-styled'
+import { H3, Label4, Button, Div, Button2, Img, Div2, Section, H2, Section1, Div4 } from './Post-styled'
 //import logo from '../../assets/labenuLogo.png'
 //import { useNavigate } from 'react-router-dom';
 
+import logo from '../../assets/labenuLogo.png'
 
 
 
@@ -92,7 +93,6 @@ function Post() {
 
     return (
         <>
-            <h1>soy el post</h1>
 
             <Div>
                 <Div2>
@@ -100,19 +100,20 @@ function Post() {
                     <Button2>Deslogar</Button2>
                 </Div2>
                 <div>
-                    <section>
+                    <Section1>
+
                         {post.map((p) => (
-                            <div>
-                                <h2>p.content={p.content}</h2>
-                            </div>
+                            <Div4>
+                                <H2>p.content={p.content}</H2>
+                            </Div4>
                         ))}
-                    </section>
+                    </Section1>
                 </div>
 
                 <section>
-                    <form onSubmit={createPost}>
+                    <form onSubmit={Post}>
                         <Section>
-                            <H3>Crear post</H3>
+                            <H3>Crear comentario</H3>
                             <Label4 htmlFor='tituloComentario'>Título del comentario:</Label4>
                             <input placeholder='digite um título para o seu comentario'
                                 name="title"
@@ -125,7 +126,7 @@ function Post() {
                             />
                         </Section>
 
-                        <Button type='submit'>Comment</Button>
+                        <Button type='submit' >Comment</Button>
 
                     </form>
                 </section>
@@ -137,7 +138,20 @@ function Post() {
     )
 }
 
-/*return (
+/*
+
+
+                        {post.map((t) => (
+                            <div>
+                                <h2>t.titulo={t.titulo}</h2>
+                            </div>
+                        ))}
+
+
+
+    onClick={navigate("/post/:id")}    
+            <h1>soy el post</h1>
+return (
   <div>HomePage
     <section>
       {post.map((post, index) => {
