@@ -76,7 +76,7 @@ function HomePage() {
       },
       body: JSON.stringify({
         content: text,
-        // titulo: text
+        titulo: text
       }),
     };
     fetch('https://deploy-labeedit-back.onrender.com/post', requestOptions)

@@ -13,16 +13,18 @@ export const Section = styled.section`{
 
 
 export const Section1 = styled.section`{
-    width: 77rem;
+    width: 21rem;
     height: 30rem;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     margin: 1rem;
     background-color: rgba(255, 203, 126, 0.378);
 }`
 
 /**
+ * 
+    background-color: rgba(135, 129, 129, 0.202); 
+ *  flex-wrap: wrap;
     border: 1px solid rgba(234, 41, 41, 0.624); */
 
 export const Input = styled.div`{
@@ -34,24 +36,27 @@ export const Input = styled.div`{
 export const H2 = styled.h2`{
     display: flex;
     justify-content:center;
-    background-color: none;
+    background-color: rgb(248, 248, 248);
     font-size: 16px;    
     font-weigth:300px;
     border: none;
+    margin: 2.5rem;
 }`
 
 export const Div4 = styled.div`{
-    width: 24rem;
-    height: 3.5rem;
+    width: 20rem;
+    height: 7rem;
     display: flex;
     justify-content:center;
     border: 1px solid rgba(234, 41, 41, 0.539); 
-    background-color: rgba(135, 129, 129, 0.202); 
+    background-color: rgb(248, 248, 248);
     margin: 0.5rem;
     border-radius: 5%;
 }`
 
-/**background-color: rgba(121, 117, 112, 0.378);
+/**
+   background-color: rgba(135, 129, 129, 0.202); 
+ * background-color: rgba(121, 117, 112, 0.378);
      */
 
 /** 

@@ -45,13 +45,12 @@ function SingUp() {
 
 
 
-
   return (
     <Div>
 
       <Nav>
         <Img src={logo} />
-        <ButtonEntrar onClick={() => { navigate("/") }}>Entrar</ButtonEntrar>
+        <ButtonEntrar onClick={() => { navigate("/login") }}>Entrar</ButtonEntrar>
       </Nav>
       <P>Olá, boas vindas ao LabEddit </P>
 

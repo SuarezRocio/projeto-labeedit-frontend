@@ -87,7 +87,10 @@ function Post() {
                .catch((error) => {
                    console.log(error)
                })
-       }*/
+       }
+       
+         <H2>p.titulo={p.titulo}</H2>
+       */
 
 
 
