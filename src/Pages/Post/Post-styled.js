@@ -14,7 +14,7 @@ export const Section = styled.section`{
 
 export const Section1 = styled.section`{
     width: 21rem;
-    height: 30rem;
+    height: 80rem;
     display: flex;
     flex-direction: column;
     margin: 1rem;
@@ -45,8 +45,9 @@ export const H2 = styled.h2`{
 
 export const Div4 = styled.div`{
     width: 20rem;
-    height: 7rem;
+    height: 11rem;
     display: flex;
+    flex-direction: column;
     justify-content:center;
     border: 1px solid rgba(234, 41, 41, 0.539); 
     background-color: rgb(248, 248, 248);
@@ -54,7 +55,8 @@ export const Div4 = styled.div`{
     border-radius: 5%;
 }`
 
-/**
+/**    flex-direction: column;
+
    background-color: rgba(135, 129, 129, 0.202); 
  * background-color: rgba(121, 117, 112, 0.378);
      */
@@ -142,3 +144,92 @@ export const Div2 = styled.div`{
     background: #EDEDED;
     position: relative;
 }`
+
+export const Div5 = styled.div`{
+    display: flex ;
+    flex-wrap: wrap;
+}`
+
+/**  border : 1px solid black; */
+
+export const Button3 = styled.button`{
+ margin: 1rem;
+}`
+
+
+/*
+vector comentario
+position: absolute;
+left: 10.01%;
+right: 10%;
+top: 15%;
+bottom: 10%;
+
+background: #6F6F6F;
+*/
+/**
+ * vector flecha para abajo
+ 
+position: absolute;
+left: 100%;
+right: -70.71%;
+top: 50%;
+bottom: -20.71%;
+
+background: #6F6F6F;
+transform: rotate(135deg);
+ */
+
+
+/**
+ * vector flecha para arriba
+ 
+position: absolute;
+left: 0%;
+right: 29.29%;
+top: 50%;
+bottom: -20.71%;
+
+background: #6F6F6F;
+transform: rotate(-45deg);
+ */
+
+/**
+ * numero de likes
+width: 18px;
+height: 12px;
+
+font-family: 'IBM Plex Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 9.56098px;
+line-height: 12px;
+text-align: center;
+
+color: #6F6F6F;
+
+
+/* Inside auto layout 
+flex: none;
+order: 1;
+flex-grow: 0; */
+
+/**
+ * numero de comentarios
+width: 12px;
+height: 12px;
+
+font-family: 'IBM Plex Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 9.56098px;
+line-height: 12px;
+text-align: center;
+
+color: #6F6F6F;
+
+
+/* Inside auto layout 
+flex: none;
+order: 1;
+flex-grow: 0; */

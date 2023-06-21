@@ -175,7 +175,11 @@ function HomePage() {
 
   const navigate = useNavigate()
 
-
+  /** <Label4 htmlFor='tituloPost'>Título:</Label4>
+              <input placeholder='digite um título para o seu post'
+                name="title"
+                onChange={(e) => { setTitulo(e.target.value) }}
+              /> */
 
   return (
     <Div>
@@ -188,11 +192,6 @@ function HomePage() {
         <form onSubmit={createPost}>
           <Section>
             <H3>Crear post</H3>
-            <Label4 htmlFor='tituloPost'>Título:</Label4>
-            <input placeholder='digite um título para o seu post'
-              name="title"
-              onChange={(e) => { setTitulo(e.target.value) }}
-            />
             <Label4 htmlFor='textoPost'>Texto:</Label4>
             <textarea placeholder='crie um post!' name="body"
               onChange={(e) => { setText(e.target.value) }}
