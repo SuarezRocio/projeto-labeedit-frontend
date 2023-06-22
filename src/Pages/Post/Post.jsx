@@ -14,7 +14,7 @@ import axios from "axios";
 //import { goToLoginPage } from "../../routes/coordinator";
 //import { H3, Label4, Button, Div, Button2, Img, Div2, Section } from './HomePage-styled'
 
-import { H3, Label4, Button, Div, Button2, Img, Div2, Section, H2, Section1, Div4, Input, Div5, Button3 } from './Post-styled'
+import { H3, Label4, Button, Div, Button2, Img, Div2, Section, H2, Section1, Div4, Input, Div5, Button3, Img1 } from './Post-styled'
 //import logo from '../../assets/labenuLogo.png'
 //import { useNavigate } from 'react-router-dom';
 //, Div5 
@@ -96,6 +96,20 @@ function Post() {
        */
 
     //<Div5></Div5>
+    /**
+                                        <Button3>
+/** <Div5>
+                                    <Button3></Button3>
+                                    <Img1 src="../../assets/Vector.png" alt="" srcset="" />
+
+                                    <Button3>
+                                        <Img1 src="../../assets/Vector(1).png" alt="" srcset="" />
+                                    </Button3>
+                                    <Button3>
+                                        <Img1 src="../../assets/Vector(2).png" alt="" srcset="" />
+                                    </Button3>
+                                </Div5>                                             <Img1 src="../../assets/Vector.png" alt="" srcset="" />
+                                        </Button3> */
     return (
         <>
 
@@ -110,22 +124,12 @@ function Post() {
                         {post.map((p) => (
                             <Div4>
                                 <H2>{p.content}</H2>
-                                <Div5>
-                                    <Button3>
-                                        <img src="../../assets/Vector.png" alt="" srcset="" />
-                                    </Button3>
-                                    <Button3>
-                                        <img src="../../assets/Vector(1).png" alt="" srcset="" />
-                                    </Button3>
-                                    <Button3>
-                                        <img src="../../assets/Vector(2).png" alt="" srcset="" />
-                                    </Button3>
-                                </Div5>
                             </Div4>
 
                         ))}
                     </Section1>
                 </div>
+                <Button onClick={() => { navigate("/home") }}>Volver a comentar</Button>
 
                 {/*  <section>
                     <form onSubmit={Post}>

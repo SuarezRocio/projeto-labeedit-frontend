@@ -21,6 +21,11 @@ export const Section1 = styled.section`{
     background-color: rgba(255, 203, 126, 0.378);
 }`
 
+export const Img1 = styled.img`{
+    width: 1rem;
+}`
+
+
 /**
  * 
     background-color: rgba(135, 129, 129, 0.202); 

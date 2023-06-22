@@ -95,3 +95,10 @@ export const P2 = styled.p`{
 }`
 
 
+export const H2 = styled.h2`{
+    font-size: 16px;    
+    font-weigth:300px; 
+    color:rgb(255, 198, 25);
+    background-color: rgb(0, 0, 0);
+    border: none;
+}`
