@@ -128,6 +128,15 @@ export const Nav = styled.div`{
     width: 90vw;
     background-color: #EDEDED;
 }`
+
+
+export const H2 = styled.h2`{
+    font-size: 16px;    
+    font-weigth:300px; 
+    color:rgb(255, 198, 25);
+    background-color: rgb(0, 0, 0);
+    border: none;
+}`
 /**display: flex;
     justify-content: center; */
 
